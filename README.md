@@ -1,3 +1,46 @@
+<h2>Good Food (POS) System</h2>
+
+<h4>Introduction</h4>
+<p>Welcome to POS System! This software is designed to my learnimg purpose, providing a user-friendly interface and robust features for managing sales, inventory, and customer interactions.</p>
+
+<p>
+  Once the POS system is installed, follow these steps to get started:
+Login: no special login.
+Add Customer: add customer before place order.
+Add Products: add item before place order.
+place order: now you can place order.
+</p>
+
+<h4>Database</h4>
+create database goodfood;
+use goodfood;
+
+create table customer(
+customerId varchar(255),
+customerName varchar(255),
+nic varchar(13),
+contact int(10),
+constraint PK_Cus primary key (customerId)
+);
+CREATE TABLE item (
+itemId VARCHAR(255),
+itemName VARCHAR(255),
+price DOUBLE,
+qty DOUBLE,
+CONSTRAINT PK_Item PRIMARY KEY (itemId)
+);
+
+CREATE TABLE orderDetail (
+date DATETIME,
+customerId VARCHAR(255),
+orderId VARCHAR(255),
+items TEXT,
+total DOUBLE,
+CONSTRAINT PK_Order PRIMARY KEY (orderId),
+CONSTRAINT FK_Customer FOREIGN KEY (customerId) REFERENCES customer(customerId)
+);
+
+
 MIT License
 
 Copyright (c) [2024] [Nipun Dhananjaya]
