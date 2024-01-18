@@ -1,9 +1,6 @@
 package lk.ijse.pos_backend.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 
@@ -11,9 +8,10 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 public class ItemDTO implements Serializable {
     private String itemId;
-    private String name;
+    private String itemName;
     private double price;
     private double qtv;
 }
